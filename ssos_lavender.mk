@@ -29,12 +29,18 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 # Inherit device configuration
 $(call inherit-product, device/xiaomi/lavender/device.mk)
 
-# Inherit from Potato vendor
-$(call inherit-product, vendor/potato/config/common_full_phone.mk)
+# Inherit from ShapeShiftOS vendor
+$(call inherit-product, vendor/ssos/config/common_full_phone.mk)
 
-# Boot animation
+# Inherit ShapeShiftOS Official build stuff.
+TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_BOOTANIM_LOW_RES := true
+TARGET_GAPPS_ARCH := arm64
+SSOS_BUILD_TYPE := OFFICIAL
+
+# Inherit ShapeShiftOS common properties.
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.ssos.cpu=SDM660
 
 # Build Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
@@ -43,7 +49,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="lavender-user 10 QKQ1.190910.002 V11.0.1.0.QFGMIXM release-keys" 
 
 # Device identifier
-PRODUCT_NAME := potato_lavender
+PRODUCT_NAME := ssos_lavender
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_PLATFORM := SDM660
 PRODUCT_DEVICE := lavender
