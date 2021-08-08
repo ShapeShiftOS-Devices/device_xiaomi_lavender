@@ -58,4 +58,8 @@
     <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
          autodetected from the Configuration. -->
     <bool name="config_showNavigationBar">true</bool>
+    
+    <!-- Max visible notification icons -->
+    <integer name="config_maxVisibleNotificationIcons">4</integer>
+    <integer name="config_maxVisibleNotificationIconsOnLock">5</integer>
 </resources>
